@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job List</title>
+</head>
+
+<body>
+
+<h1>Available Jobs</h1>
+
+<a href="{% url 'job_create' %}">
+    Create New Student
+</a>
+
+<hr>
+
+{% for x in stds %}
+
+    <h2>
+        <a href="{% url 'job_detail' job.pk %}">
+            {{ x.name }}
+        </a>
+    </h2>
+
+    <p>Roll: {{ x.roll }}</p>
+    <p>Dept: {{ x.dept }}</p>
+    <p>Address: {{ x.address }}</p>
+    <p>Address: {{ x.phone }}</p>
+
+    <a href="{% url 'edit' job.pk %}">
+        Edit
+    </a>
+
+    |
+
+    <a href="{% url 'delete' job.pk %}">
+        Delete
+    </a>
+
+    <hr>
+
+{% empty %}
+
+    <p>No jobs available.</p>
+
+{% endfor %}
+
+</body>
+</html>

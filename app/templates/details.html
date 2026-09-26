@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ std.name }}</title>
+</head>
+
+<body>
+
+<h1>{{ std.roll }}</h1>
+
+<p>
+    <strong>Company:</strong>
+    {{ std.dept }}
+</p>
+
+<p>
+    <strong>Location:</strong>
+    {{ std.address }}
+</p>
+
+<p>
+    <strong>Salary:</strong>
+    {{ std.phone }}
+</p>
+
+
+<hr>
+
+<a href="{% url 'edit' job.pk %}">
+    Edit Job
+</a>
+
+<br><br>
+
+<a href="{% url 'delete' job.pk %}">
+    Delete Job
+</a>
+
+<br><br>
+
+<a href="{% url 'list' %}">
+    Back to Jobs
+</a>
+
+</body>
+</html>
