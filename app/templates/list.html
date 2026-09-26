@@ -8,7 +8,7 @@
 
 <h1>Available Jobs</h1>
 
-<a href="{% url 'job_create' %}">
+<a href="{% url 'create' %}">
     Create New Student
 </a>
 
@@ -17,7 +17,7 @@
 {% for x in stds %}
 
     <h2>
-        <a href="{% url 'job_detail' job.pk %}">
+        <a href="{% url 'detail' x.pk %}">
             {{ x.name }}
         </a>
     </h2>
@@ -27,13 +27,13 @@
     <p>Address: {{ x.address }}</p>
     <p>Address: {{ x.phone }}</p>
 
-    <a href="{% url 'edit' job.pk %}">
+    <a href="{% url 'edit' x.pk %}">
         Edit
     </a>
 
     |
 
-    <a href="{% url 'delete' job.pk %}">
+    <a href="{% url 'delete' x.pk %}">
         Delete
     </a>
 
